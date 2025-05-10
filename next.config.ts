@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-		domains: ['images.unsplash.com', 'source.unsplash.com']
+		remotePatterns: [
+			{ protocol: 'https', hostname: 'upcdn.io' },
+			{ protocol: 'https', hostname: 'images.unsplash.com' }
+		]
 	}
 };
 

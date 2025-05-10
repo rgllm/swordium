@@ -1,5 +1,9 @@
+import ArticleForm from "@/components/articleForm";
+
 export default function NewArticlePage() {
   return (
-    <h1>New Article</h1>
+  <main className="container mx-auto py-12">
+    <ArticleForm/>
+  </main>
   );
 }
