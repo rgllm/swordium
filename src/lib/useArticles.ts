@@ -1,4 +1,7 @@
+'use client'
+
 import { Article } from '@/types/Article'
+import { ArticleStatus } from '@/types/ArticleStatus'
 import { useState, useEffect } from 'react'
 
 function useLocalStorage<T>(key: string, initialValue: T) {
@@ -26,12 +29,16 @@ export function useArticles(key: string) {
 	function publishArticle(slug: string) {
 		setArticles(prev =>
 			prev.map(article =>
-				article.slug === slug && article.status === 'draft'
-					? { ...article, status: 'published' }
+				article.slug === slug && article.status === ArticleStatus.DRAFT
+					? { ...article, status: ArticleStatus.PUBLISHED }
 					: article
 			)
 		)
 	}
 
-	return { articles, addArticle, publishArticle }
+	function getArticleBySlug(slug: string) {
+		return articles.find(article => article.slug === slug)
+	}
+
+	return { articles, addArticle, publishArticle, getArticleBySlug }
 }

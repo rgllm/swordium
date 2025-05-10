@@ -47,7 +47,7 @@ export function ArticleForm() {
 
   return (
     <Card className="w-full mx-auto">
-    <CardHeader className="border-b bg-muted/40">
+    <CardHeader className="border-b bg-zinc-50">
       <CardTitle className="text-2xl font-bold">Create New Article</CardTitle>
       <CardDescription>Fill in the details to create your new article</CardDescription>
     </CardHeader>
