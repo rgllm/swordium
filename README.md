@@ -3,6 +3,8 @@
 A social news platform, similar to Medium, where registered users can
 read and share news articles with the community.
 
+![CleanShot 2025-05-12 at 16 17 36@2x](https://github.com/user-attachments/assets/e81ab43d-491e-4721-8c78-bf0160adcdd5)
+
 ## Tech Stack
 
 - **Framework**: Next.js
