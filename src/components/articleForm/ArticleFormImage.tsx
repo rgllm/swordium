@@ -1,10 +1,10 @@
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
 import { UseFormReturn } from "react-hook-form"
-import { Article } from "@/types/Article"
 import ImageUpload from "../imageUpload"
+import { ArticleFormValues } from "./schema"
 
 type ArticleFormImageProps = {
-  form: UseFormReturn<Article>
+  form: UseFormReturn<ArticleFormValues>
   imageKey: number
 }
 

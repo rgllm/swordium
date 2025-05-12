@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 import { Form } from "../ui/form"
-import { articleSchema } from "./schema"
+import { ArticleFormValues, articleSchema } from "./schema"
 import { Card, CardContent } from "../ui/card"
 import { useArticles } from "@/lib/useArticles"
 import { ARTICLES_KEY, slugify } from "@/lib/utils"
@@ -25,12 +25,12 @@ export function ArticleForm({ article, onSuccess }: ArticleFormProps) {
   const [imageKey, setImageKey] = useState(0)
   const { addArticle, updateArticle } = useArticles(ARTICLES_KEY)
 
-  const form = useForm<Article>({
+  const form = useForm<ArticleFormValues>({
     resolver: zodResolver(articleSchema),
     defaultValues: article
   })
 
-  async function onSubmit(data: Article) {
+  async function onSubmit(data: ArticleFormValues) {
     if (article && article?.slug) {
       updateArticle(article.slug, { ...data })
     } else {

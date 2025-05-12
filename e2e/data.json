@@ -1,0 +1,101 @@
+[
+  {
+      "title": "Optimizing React Performance",
+      "description": "Learn essential techniques to improve React application performance. This guide covers memoization, code splitting, virtualization, and other strategies to create lightning-fast user experiences.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "engineering",
+      "content": "React performance optimization begins with identifying bottlenecks through proper profiling. The React DevTools Profiler provides insights into component render times and commit frequency. Memoization through React.memo, useMemo, and useCallback prevents unnecessary rerenders by caching values and function references. Code splitting with dynamic imports reduces initial bundle size, loading components only when needed. Virtualization techniques like react-window or react-virtualized efficiently render large lists by only displaying visible items. State management optimization ensures updates are granular and well-structured. Lazy loading images and assets improves perceived performance. Web workers offload heavy computations to background threads. Tree shaking eliminates unused code from the final bundle. Server-side rendering and static generation provide faster initial page loads. Image optimization through proper formats and compression significantly impacts load times. The React Concurrent Mode enables prioritizing critical updates. Performance testing should be an ongoing process integrated into your development workflow.",
+      "slug": "optimizing-react-performance",
+      "status": "draft"
+  },
+  {
+      "title": "Design Systems at Scale 2",
+      "description": "How to build, maintain, and evolve design systems that support product growth. This article explores component architecture, documentation strategies, and team workflows for effective design system management.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "design",
+      "content": "Design systems at scale require thoughtful architecture and clear governance models. Component hierarchy should follow atomic design principles, building from basic elements to complex patterns. Version control strategies must balance innovation with stability through semantic versioning and deprecation policies. Documentation serves as the single source of truth, covering usage guidelines, code examples, and design specifications. Multi-disciplinary teams maintain alignment through shared ownership and regular cross-functional reviews. Token-based design systems provide flexibility while ensuring consistency across platforms. Accessibility compliance must be baked into components rather than addressed as an afterthought. Testing frameworks validate both visual appearance and functional behavior across environments. Design-to-code workflows streamline implementation through tools like Figma-to-React generation. Adoption metrics track system usage and identify potential improvements. Feedback loops involve both system creators and consumers. Localization support handles text expansion, direction changes, and cultural considerations. As products evolve, design systems must balance consistency with adaptation, providing sufficient flexibility while maintaining cohesive user experiences.",
+      "slug": "design-systems-at-scale",
+      "status": "draft"
+  },
+  {
+      "title": "Content Marketing for SaaS",
+      "description": "Strategic approaches to content marketing specifically tailored for SaaS businesses. Discover how to create valuable content that drives user acquisition, activation, and retention through the entire customer journey.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "marketing",
+      "content": "Content marketing for SaaS companies requires strategic alignment with the customer journey and product capabilities. Top-of-funnel content addresses prospect pain points and questions, establishing thought leadership without explicit product promotion. Middle-funnel content demonstrates specific solutions through comparison guides, case studies, and detailed problem-solution frameworks. Bottom-funnel content facilitates evaluation through product tours, feature comparisons, and implementation guidance. Onboarding content accelerates time-to-value through tutorials, best practices, and quick-start guides. Retention-focused content highlights advanced features, success stories, and usage optimization. SEO strategy should target both high-volume discovery terms and specific long-tail queries indicating purchase intent. Content repurposing maximizes value by transforming core pieces into multiple formats across various channels. Success measurement goes beyond traffic to track influenced pipeline, conversion impact, and retention correlation. Product-led content demonstrates actual capabilities rather than making abstract claims. Regular content audits ensure continued relevance and performance. Community-generated content supplements internal resources while fostering user engagement. As competition increases, successful SaaS content marketing increasingly focuses on depth, specificity, and tangible value rather than volume.",
+      "slug": "content-marketing-for-saas",
+      "status": "published"
+  },
+  {
+      "title": "Product Management Frameworks",
+      "description": "Essential frameworks that help product managers prioritize features, make decisions, and create successful product strategies. This guide covers both established methodologies and emerging approaches.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "product",
+      "content": "Product management frameworks provide structured approaches to the complex challenges of product development and strategy. The RICE scoring model (Reach, Impact, Confidence, Effort) offers a quantitative approach to feature prioritization. Jobs To Be Done focuses on understanding the fundamental problems customers are trying to solve. Opportunity Solution Trees map problem spaces to potential solutions and experiments. The Kano Model categorizes features based on customer satisfaction and excitement. Product Requirement Documents (PRDs) structure the communication of feature specifications and rationale. North Star Metrics align teams around key success indicators. User Story Mapping visualizes the user journey across features and releases. The MoSCoW method (Must have, Should have, Could have, Won't have) enables scope management. OKRs (Objectives and Key Results) connect product initiatives to measurable outcomes. The Product Vision Board defines high-level product direction and strategy. Lean Canvas provides startup-focused business planning. AARRR pirate metrics track Acquisition, Activation, Retention, Referral, and Revenue. Impact mapping connects business goals to user needs and feature development. The most effective product managers select frameworks based on context rather than dogmatically applying a single methodology.",
+      "slug": "product-management-frameworks",
+      "status": "published"
+  },
+  {
+      "title": "Microservices Architecture Patterns",
+      "description": "Practical patterns and best practices for designing, implementing, and maintaining microservices architectures. Learn how to solve common challenges in distributed systems design.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "engineering",
+      "content": "Microservices architecture patterns address common challenges in distributed system design and operation. The API Gateway pattern centralizes cross-cutting concerns like authentication, routing, and protocol translation. Service Discovery enables dynamic location of service instances through registration and lookup mechanisms. Circuit Breaker prevents cascading failures by detecting problems and gracefully degrading functionality. Event Sourcing captures all changes as a sequence of events, enabling robust audit trails and state reconstruction. CQRS (Command Query Responsibility Segregation) separates read and write operations for optimized performance. Saga patterns manage distributed transactions across multiple services. Bulkhead isolation contains failures within service boundaries. Sidecar patterns attach common functionality to services without modifying their code. Database-per-service ensures loose coupling through dedicated data storage. Event-driven communication reduces temporal coupling between services. The Strangler pattern enables gradual migration from monolithic architectures. Service mesh infrastructure handles networking, security, and observability. Properly implemented, these patterns enable systems that combine the benefits of decoupled services with operational reliability, though they introduce complexity requiring mature engineering practices.",
+      "slug": "microservices-architecture-patterns",
+      "status": "published"
+  },
+  {
+      "title": "UI Motion Design Principles",
+      "description": "How thoughtful animation and motion design enhance user interfaces beyond aesthetics. Explore principles for creating purposeful, accessible motion that improves usability and emotional connection.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "design",
+      "content": "UI motion design principles focus on enhancing usability and communication through purposeful animation. Functional animation communicates system status, reveals relationships, and guides attention rather than merely decorating interfaces. Natural physics creates believable movement through proper easing, velocity, and acceleration that matches user expectations. Hierarchy reinforcement uses motion to emphasize important elements and relationships. Personality expression through distinctive motion characteristics reinforces brand identity. Performance optimization ensures animations maintain smooth framerates even on lower-powered devices. Spatial relationships are clarified through transitions that maintain user context during navigation. Progressive disclosure uses motion to reveal complexity gradually as needed. Feedback confirmation acknowledges user actions through immediate, subtle responses. Global coordination ensures consistent timing and behavior across an interface. Accessibility considerations include respecting reduced motion preferences and providing alternatives to motion-dependent information. Parallax effects create depth while maintaining usability. Micro-interactions reward users and add moments of delight without disruption. State changes benefit from transitions that indicate causality. Properly implemented, motion design creates interfaces that feel more intuitive, responsive, and emotionally satisfying.",
+      "slug": "ui-motion-design-principles",
+      "status": "published"
+  },
+  {
+      "title": "Conversion Rate Optimization",
+      "description": "Data driven",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "marketing",
+      "content": "Conversion rate optimization (CRO) transforms visitor behavior through systematic experimentation and analysis. User research provides foundational understanding through session recordings, heatmaps, surveys, and interviews. Conversion funnel analysis identifies high-impact drop-off points for focused improvement. Hypothesis formulation follows a structured approach connecting observations to potential solutions with expected outcomes. A/B testing compares variations with statistical rigor, avoiding common pitfalls like stopping tests early or testing too many elements simultaneously. Multivariate testing examines interaction effects between multiple elements. Landing page optimization focuses on clarity, relevance, and persuasive elements aligned with traffic sources. Form optimization reduces friction through field reduction, logical grouping, and error prevention. Call-to-action refinement considers placement, design, and messaging for maximum impact. Social proof integration leverages testimonials, reviews, and usage statistics to build confidence. Mobile-specific optimization addresses the unique constraints and behaviors of mobile users. Personalization delivers tailored experiences based on user segments and behaviors. Analytics implementation ensures proper tracking of both macro and micro conversions. As a continuous process rather than a one-time project, successful CRO programs build organizational testing cultures that consistently improve user experiences and business outcomes.",
+      "slug": "conversion-rate-optimization",
+      "status": "published"
+  },
+  {
+      "title": "Product Roadmap Development",
+      "description": "Strategies for creating and communicating effective product roadmaps that align stakeholders while maintaining strategic flexibility. This guide covers roadmap formats, timeframes, and communication approaches.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "product",
+      "content": "Product roadmap development balances strategic direction with adaptability to changing conditions. Outcome-oriented roadmaps focus on customer and business problems rather than feature lists, organized by objectives rather than timelines. Time horizon considerations determine appropriate detail levels, with near-term items requiring greater specificity than long-term directions. Strategic alignment ensures roadmap initiatives connect directly to company goals and product vision. Confidence levels communicate the degree of certainty about future items, setting appropriate expectations. Stakeholder input gathering processes collect and prioritize feedback from customers, sales, support, and engineering perspectives. Theme-based organization groups related initiatives to communicate strategic focus areas. Resource allocation visibility helps manage expectations about delivery capacity. Technical debt and platform work receive explicit representation rather than being hidden or neglected. External versus internal roadmap versions maintain transparency while managing competitive information. Regular review cadences keep roadmaps relevant as market conditions and priorities evolve. Presentation formats vary by audience, with executive, sales, technical, and customer-facing versions emphasizing different aspects. Roadmap tools range from specialized software to presentation slides, with selection based on communication needs rather than feature complexity.",
+      "slug": "product-roadmap-development",
+      "status": "published"
+  },
+  {
+      "title": "Frontend Testing Strategies",
+      "description": "Comprehensive approaches to testing frontend applications for reliability and maintainability. Learn how to implement effective testing pyramids that balance unit, integration, and end-to-end testing.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "engineering",
+      "content": "Frontend testing strategies ensure application reliability while supporting rapid development. Component testing with libraries like React Testing Library focuses on user-centric behaviors rather than implementation details. Unit testing evaluates isolated functions and utilities with frameworks like Jest. Integration testing verifies interaction between components and services. End-to-end testing with tools like Cypress or Playwright validates complete user flows across the application. Visual regression testing catches unexpected UI changes through automated screenshot comparison. Accessibility testing ensures inclusive experiences for all users. Performance testing measures loading times, rendering efficiency, and interaction responsiveness. Mock service workers intercept network requests for consistent test environments. Snapshot testing detects unintended component changes. Test-driven development practices establish expected behavior before implementation. Continuous integration automatically runs tests on code changes. Test coverage metrics indicate tested code percentages while highlighting gaps. Component storybooks document and validate UI elements across various states. Testing trophy approaches emphasize integration tests for optimal cost-benefit balance. Property-based testing generates varied inputs to discover edge cases. With thoughtful implementation, these testing strategies create confidence in application behavior while supporting rather than hindering development velocity.",
+      "slug": "frontend-testing-strategies",
+      "status": "published"
+  },
+  {
+      "title": "Design Tokens Implementation",
+      "description": "How to structure and implement design tokens for consistent visual experiences across platforms. This guide covers token organization, naming conventions, and technical approaches to design token systems.",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "design",
+      "content": "Design tokens implementation transforms abstract design decisions into concrete, reusable values that ensure consistency across platforms and products. Token categorization organizes values into semantic groupings like colors, typography, spacing, and animation. Platform-specific transformations convert abstract tokens into framework-specific formats for iOS, Android, Web, and other environments. Naming conventions follow clear patterns that indicate usage context, variants, and relationships. Token hierarchy establishes relationships between global, alias, and component-specific tokens. Version control and release processes manage token evolution while maintaining backward compatibility. Documentation connects tokens to design intention and usage guidelines. Integration with design tools through plugins for Figma, Sketch, and Adobe XD maintains synchronization between design and implementation. Build system integration transforms token source files into platform-specific deliverables. Theme support enables light/dark mode, brand variations, and other visual alternatives through token swapping. Accessibility considerations include contrast checking and size scaling. Component consumption patterns determine how tokens reach final implementation. Token testing verifies visual consistency across platforms. As design systems mature, token implementation increasingly serves as the authoritative source of truth connecting design decisions to technical implementation across diverse platforms and products.",
+      "slug": "design-tokens-implementation",
+      "status": "published"
+  },
+  {
+      "title": "Teste Draft",
+      "description": "1212414",
+      "status": "published",
+      "image": "https://upcdn.io/W142hJk/raw/demo/4jnswbLu3F.jpg",
+      "category": "marketing",
+      "content": "124124",
+      "slug": "teste-draft"
+  }
+]

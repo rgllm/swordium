@@ -1,13 +1,25 @@
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
-import { Input } from "../ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
-import { Textarea } from "../ui/textarea"
-import { ArticleStatus } from "@/types/ArticleStatus"
-import { UseFormReturn } from "react-hook-form"
-import { Article } from "@/types/Article"
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '../ui/form'
+import { Input } from '../ui/input'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '../ui/select'
+import { Textarea } from '../ui/textarea'
+import { ArticleStatus } from '@/types/ArticleStatus'
+import { UseFormReturn } from 'react-hook-form'
+import { ArticleFormValues } from './schema'
 
 type ArticleFormBasicInfoProps = {
-  form: UseFormReturn<Article>
+  form: UseFormReturn<ArticleFormValues>
 }
 
 export function ArticleFormBasicInfo({ form }: ArticleFormBasicInfoProps) {
@@ -22,7 +34,11 @@ export function ArticleFormBasicInfo({ form }: ArticleFormBasicInfoProps) {
           <FormItem>
             <FormLabel className="text-base font-medium">Title</FormLabel>
             <FormControl>
-              <Input placeholder="Enter article title" className="h-11" {...field} />
+              <Input
+                placeholder="Enter article title"
+                className="h-11"
+                {...field}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>

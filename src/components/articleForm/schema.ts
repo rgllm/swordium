@@ -11,7 +11,7 @@ export const articleSchema = z.object({
 	image: z.string().min(1, 'Image is required'),
 	category: z.string().min(1, 'Category is required'),
 	content: z.string().min(1, 'Content is required'),
-	slug: z.string(),
+	slug: z.string().optional(),
 })
 
 export type ArticleFormValues = z.infer<typeof articleSchema>
