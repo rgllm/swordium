@@ -10,9 +10,9 @@ export default function NotFound() {
         <p className="text-zinc-600 mb-8">
           The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
-        <Button asChild size="lg">
-          <Link href="/">Return to Homepage</Link>
-        </Button>
+        <Link href="/">Return to Homepage
+          <Button asChild size="lg"></Button>
+        </Link>
       </div>
     </main>
   )

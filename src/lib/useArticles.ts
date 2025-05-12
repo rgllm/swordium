@@ -26,6 +26,16 @@ export function useArticles(key: string) {
 		setArticles(prev => [...prev, article])
 	}
 
+	function updateArticle(slug: string, updatedArticle: Partial<Article>) {
+		setArticles(prev =>
+			prev.map(article =>
+				article.slug === slug
+					? { ...article, ...updatedArticle }
+					: article
+			)
+		)
+	}
+
 	function publishArticle(slug: string) {
 		setArticles(prev =>
 			prev.map(article =>
@@ -40,5 +50,5 @@ export function useArticles(key: string) {
 		return articles.find(article => article.slug === slug)
 	}
 
-	return { articles, addArticle, publishArticle, getArticleBySlug }
+	return { articles, addArticle, updateArticle, publishArticle, getArticleBySlug }
 }

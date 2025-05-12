@@ -24,7 +24,7 @@ export function PostCard({ slug, title, description, image }: PostCardProps) {
         </div>
 
         <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-          <h2 className="text-xl md:text-2xl font-bold text-zinc-900 mb-3 group-hover:text-zinc-700 transition-colors">{title}</h2>
+          <h2 className="text-xl font-bold text-zinc-900 mb-3 group-hover:text-zinc-700 transition-colors">{title}</h2>
           <p className="text-zinc-600 mb-6 line-clamp-2">{description}</p>
           
           <div className="flex items-center text-sm font-medium text-zinc-500 group-hover:text-zinc-800 transition-colors">
