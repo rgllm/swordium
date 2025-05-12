@@ -16,7 +16,7 @@ export function MembersOnlyDialog() {
             Only signin users can read the article.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col space-y-3 py-4 justify-center">
+        <div className="flex flex-col space-y-3 py-4 items-center">
           <SignButton />
         </div>
         <DialogFooter className="flex justify-center">

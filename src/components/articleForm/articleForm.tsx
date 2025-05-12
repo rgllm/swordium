@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 import { Form } from "../ui/form"
-import { useArticleFormSchema } from "./schema"
+import { articleSchema } from "./schema"
 import { Card, CardContent } from "../ui/card"
 import { useArticles } from "@/lib/useArticles"
 import { ARTICLES_KEY, slugify } from "@/lib/utils"
@@ -24,11 +24,10 @@ type ArticleFormProps = {
 export function ArticleForm({ article, onSuccess }: ArticleFormProps) {
   const [imageKey, setImageKey] = useState(0)
   const { addArticle, updateArticle } = useArticles(ARTICLES_KEY)
-  const { schema, initialValues } = useArticleFormSchema({article})
 
   const form = useForm<Article>({
-    resolver: zodResolver(schema),
-    defaultValues: initialValues
+    resolver: zodResolver(articleSchema),
+    defaultValues: article
   })
 
   async function onSubmit(data: Article) {
@@ -46,9 +45,17 @@ export function ArticleForm({ article, onSuccess }: ArticleFormProps) {
 
   useEffect(() => {
     if (article) {
-      form.reset(article)
+      form.reset({
+        slug: article.slug,
+        title: article.title,
+        description: article.description,
+        image: article.image,
+        status: article.status,
+        category: article.category,
+        content: article.content
+      })
     }
-  }, [article])
+  }, [article, form])
 
   return (
     <Card className="w-full mx-auto">

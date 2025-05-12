@@ -9,7 +9,7 @@ import { Article } from "@/components/article"
 import { Role } from "@/types/Role"
 
 export default function ArticlePage() {
-  const { role, isSignedIn, isLoading } = useSwordiumUser()
+  const { role, isSignedIn } = useSwordiumUser()
   const { getArticleBySlug } = useArticles(ARTICLES_KEY)
   const pathname = usePathname()
   const slug = pathname.replace("/article/", "")
@@ -22,10 +22,11 @@ export default function ArticlePage() {
 
   return (
     <main className="min-h-screen pb-16">
-      {(!isSignedIn && !isLoading) && <Article.MembersOnlyDialog />}
+      {!isSignedIn && <Article.MembersOnlyDialog />}
       <article className="max-w-2xl mx-auto px-4 pt-8">
         <Article.Header 
-          title={article.title} 
+          title={article.title}
+          status={article.status}
           category={article.category}
           slug={article.slug}
           showEditButton={isCurrentUserAdmin}

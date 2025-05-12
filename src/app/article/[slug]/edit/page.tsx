@@ -27,8 +27,8 @@ export default function EditArticlePage() {
   return (
     <main className="container mx-auto py-12">
       <ArticleForm 
-        article={article} 
-        onSuccess={handleSuccess} 
+        article={article}
+        onSuccess={handleSuccess}
       />
     </main>
   )

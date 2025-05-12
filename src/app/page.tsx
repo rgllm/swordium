@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { ArrowDown } from 'lucide-react'
 
 import { PostCard } from '@/components/PostCard/PostCard'
 import ShowcaseSection from '@/components/ShowcaseSection'
@@ -14,7 +15,7 @@ export default function Home() {
 	const { articles } = useArticles(ARTICLES_KEY)
 	const [activeCategory, setActiveCategory] = useState<string>('all')
 	const isClient = useIsClient()
-	const { featured, categories, filteredArticles } = useFilteredArticles(articles, activeCategory)
+	const { featured, categories, filteredArticles, hasMore, loadMore } = useFilteredArticles(articles, activeCategory)
 
 	if (!featured || !isClient) {
 		return (
@@ -30,20 +31,16 @@ export default function Home() {
 	return (
 		<main className="min-h-screen">
 			<div className="container mx-auto px-4 py-16">
-
 				<ShowcaseSection {...featured} />
 				
 				{categories.length > 1 && (
 					<div className="flex flex-wrap gap-2 my-12 justify-center">
-						{categories.map(category => (
+						{categories.map((category) => (
 							<Button
 								key={category}
 								onClick={() => setActiveCategory(category)}
-								className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-									activeCategory === category
-										? 'bg-zinc-900 text-white'
-										: 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
-								}`}
+								variant={activeCategory === category ? "default" : "outline"}
+								size="sm"
 							>
 								{category}
 							</Button>
@@ -52,17 +49,29 @@ export default function Home() {
 				)}
 				
 				{filteredArticles.length > 0 && (
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-							{filteredArticles.map((article) => (
-								<PostCard
-									key={article.slug}
-									slug={article.slug}
-									title={article.title}
-									description={article.description}
-									image={article.image}
-								/>
-							))}
-						</div>
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						{filteredArticles.map((article) => (
+							<PostCard
+								key={article.slug}
+								slug={article.slug}
+								title={article.title}
+								description={article.description}
+								image={article.image}
+							/>
+						))}
+					</div>
+				)}
+
+				{hasMore && (
+					<div className="mt-8 flex justify-center">
+						<Button 
+							onClick={loadMore}
+							size="lg"
+							aria-label="Load more articles"
+						>
+							<ArrowDown size={16}/> Load More
+						</Button>
+					</div>
 				)}
 			</div>
 		</main>
