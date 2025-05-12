@@ -1,3 +1,3 @@
-import { ShowcaseSection } from "./ShowcaseSection";
+import { ShowcaseSection } from './ShowcaseSection'
 
 export default ShowcaseSection

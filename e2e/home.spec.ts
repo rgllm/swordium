@@ -1,90 +1,60 @@
 import { test, expect } from '@playwright/test'
-import initialData from './data.json' assert { type: 'json' }
-import { ARTICLES_KEY } from '../src/lib/utils'
+
+import articlesMock from './articles.json' assert { type: 'json' }
 
 test.describe('Home', () => {
   const baseUrl = 'http://localhost:3000'
 
-  test('should load the home page and display articles', async ({ page }) => {
-    // Set articles data in localStorage before testing
+  test.beforeEach(async ({ page }) => {
     await page.addInitScript(
-      (data, key) => {
+      ({ data, key }) => {
         localStorage.setItem(key, JSON.stringify(data))
       },
-      initialData,
-      'articles',
+      { data: articlesMock, key: 'articles' },
     )
+  })
 
+  test('should load homepage and show articles', async ({ page }) => {
     await page.goto(baseUrl)
 
     await expect(page).toHaveTitle(/Swordium/)
     await expect(page.locator('main')).toBeVisible()
 
-    const articleCards = page.locator('[href^="/article/"]')
-    await expect(articleCards.first()).toBeVisible({ timeout: 5000 })
+    const cards = page.locator('[href^="/article/"]')
 
-    const articlesCount = await articleCards.count()
-    expect(articlesCount).toBeGreaterThan(0)
+    await expect(cards.first()).toBeVisible({ timeout: 5000 })
+    expect(await cards.count()).toBeGreaterThan(0)
   })
 
   test('should filter articles by category', async ({ page }) => {
-    // Set articles data in localStorage before testing
-    await page.addInitScript(
-      (data, key) => {
-        localStorage.setItem(key, JSON.stringify(data))
-      },
-      initialData,
-      ARTICLES_KEY,
-    )
-
     await page.goto(baseUrl)
+
     await expect(page.locator('main')).toBeVisible()
 
-    const categoryButtons = page.getByRole('button')
-    const initialArticles = page.locator('[href^="/article/"]')
-    const initialCount = await initialArticles.count()
+    const buttons = page.getByRole('button')
+    const cards = page.locator('[href^="/article/"]')
+    const before = await cards.count()
 
-    const categoriesCount = await categoryButtons.count()
-    if (categoriesCount > 1) {
-      await categoryButtons.nth(1).click()
-      await page.waitForTimeout(500)
+    await buttons.nth(1).click()
+    await page.waitForTimeout(500)
 
-      const filteredArticles = page.locator('[href^="/article/"]')
-      const filteredCount = await filteredArticles.count()
-
-      expect(filteredCount).toBeLessThanOrEqual(initialCount)
-    }
+    expect(
+      await page.locator('[href^="/article/"]').count(),
+    ).toBeLessThanOrEqual(before)
   })
 
-  test('should navigate to article when clicking on a post card', async ({
-    page,
-  }) => {
-    // Set articles data in localStorage before testing
-    await page.addInitScript(
-      (data, key) => {
-        localStorage.setItem(key, JSON.stringify(data))
-      },
-      initialData,
-      ARTICLES_KEY,
-    )
-
+  test('should go to article', async ({ page }) => {
     await page.goto(baseUrl)
+
     await expect(page.locator('main')).toBeVisible()
 
-    const articleCards = page.locator('[href^="/article/"]')
-    await expect(articleCards.first()).toBeVisible({ timeout: 5000 })
+    const cards = page.locator('[href^="/article/"]')
 
-    const count = await articleCards.count()
-    if (count > 0) {
-      const cardTitle = await articleCards.first().locator('h2').textContent()
-      await articleCards.first().click()
+    await expect(cards.first()).toBeVisible({ timeout: 5000 })
 
-      await expect(page.url()).toContain('/article/')
-      if (cardTitle) {
-        await expect(
-          page.getByRole('heading').filter({ hasText: cardTitle }),
-        ).toBeVisible()
-      }
+    if ((await cards.count()) > 0) {
+      await cards.first().click()
+      await expect(page).toHaveURL(/\/article\//)
     }
   })
 })

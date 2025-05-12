@@ -1,7 +1,14 @@
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
-import { Textarea } from "../ui/textarea"
-import { UseFormReturn } from "react-hook-form"
-import { ArticleFormValues } from "./schema"
+import { UseFormReturn } from 'react-hook-form'
+
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '../ui/form'
+import { Textarea } from '../ui/textarea'
+import { ArticleFormValues } from './schema'
 
 type ArticleFormContentProps = {
   form: UseFormReturn<ArticleFormValues>
@@ -9,7 +16,7 @@ type ArticleFormContentProps = {
 
 export function ArticleFormContent({ form }: ArticleFormContentProps) {
   return (
-    <div className="pt-4 border-t">
+    <div className="border-t pt-4">
       <FormField
         control={form.control}
         name="content"

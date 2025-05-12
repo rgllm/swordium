@@ -1,7 +1,5 @@
-// Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
 
-// Mocking next/navigation
 jest.mock('next/navigation', () => ({
   usePathname: jest.fn(),
   useRouter: jest.fn(() => ({
@@ -14,7 +12,6 @@ jest.mock('next/navigation', () => ({
   })),
 }))
 
-// Mocking @clerk/nextjs
 jest.mock('@clerk/nextjs', () => ({
   useUser: jest.fn(),
 }))

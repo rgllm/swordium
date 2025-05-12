@@ -1,3 +1,3 @@
-import { SignButton } from "./Signbutton";
+import { SignButton } from './Signbutton'
 
 export default SignButton

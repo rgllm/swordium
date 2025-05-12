@@ -1,4 +1,4 @@
-import { UploadDropzone } from 'react-uploader';
+import { UploadDropzone } from 'react-uploader'
 import { Uploader } from 'uploader'
 
 const uploader = Uploader({ apiKey: 'free' })
@@ -19,7 +19,7 @@ export function ImageUpload({ onChange }: ImageUploadProps) {
     <UploadDropzone
       uploader={uploader}
       options={options}
-      onUpdate={files => {
+      onUpdate={(files) => {
         const url = files[0]?.fileUrl
         if (url) onChange(url)
       }}

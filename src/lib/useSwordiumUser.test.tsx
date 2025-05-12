@@ -6,17 +6,14 @@ import { useUser } from '@clerk/nextjs'
 import { useSwordiumUser } from './useSwordiumUser'
 import { Role } from '@/types/Role'
 
-// Mock the useUser hook from Clerk
 const mockUseUser = useUser as jest.MockedFunction<typeof useUser>
 
 describe('useSwordiumUser hook', () => {
   beforeEach(() => {
-    // Reset the mock before each test
     jest.clearAllMocks()
   })
 
   it('should return null role, isSignedIn false, and isLoading true when user is not loaded', () => {
-    // Setup the mock to return a not loaded state
     mockUseUser.mockReturnValue({
       user: undefined,
       isLoaded: false,
@@ -33,7 +30,6 @@ describe('useSwordiumUser hook', () => {
   })
 
   it('should return null role, isSignedIn false, and isLoading true when user is null', () => {
-    // Setup the mock to return a loaded state but no user
     mockUseUser.mockReturnValue({
       user: null,
       isLoaded: true,
@@ -50,7 +46,6 @@ describe('useSwordiumUser hook', () => {
   })
 
   it('should return ADMIN role when user has admin role', () => {
-    // Setup the mock to return a user with ADMIN role
     mockUseUser.mockReturnValue({
       user: {
         organizationMemberships: [{ role: 'org:admin' }],
@@ -69,7 +64,6 @@ describe('useSwordiumUser hook', () => {
   })
 
   it('should return MEMBER role when user has member role', () => {
-    // Setup the mock to return a user with MEMBER role
     mockUseUser.mockReturnValue({
       user: {
         organizationMemberships: [{ role: 'org:member' }],
@@ -88,7 +82,6 @@ describe('useSwordiumUser hook', () => {
   })
 
   it('should return null role when user has an invalid role', () => {
-    // Setup the mock to return a user with an invalid role
     mockUseUser.mockReturnValue({
       user: {
         organizationMemberships: [{ role: 'org:invalid_role' }],
@@ -107,7 +100,6 @@ describe('useSwordiumUser hook', () => {
   })
 
   it('should return null role when user has no organization memberships', () => {
-    // Setup the mock to return a user with no organization memberships
     mockUseUser.mockReturnValue({
       user: {
         organizationMemberships: [],

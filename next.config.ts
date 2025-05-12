@@ -3,10 +3,10 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'upcdn.io' }],
-  },
-  experimental: {
-    viewTransition: true,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'upcdn.io' },
+      { protocol: 'https', hostname: 'picsum.photos' },
+    ],
   },
 }
 
