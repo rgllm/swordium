@@ -14,6 +14,7 @@ read and share news articles with the community.
 - **Authentication**: Clerk
 - **UI Components**: shadcn UI
 - **Icons**: Lucide React
+- **Testing**: Jest (unit/integration) + Playwright (E2E)
 
 ## Getting Started
 
@@ -44,3 +45,29 @@ read and share news articles with the community.
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Testing
+
+### Unit
+
+Run tests with:
+
+```bash
+pnpm test
+```
+
+### E2E Tests
+
+Run E2E tests in headless mode:
+
+```bash
+pnpm test:e2e
+```
+
+Run E2E tests with UI mode:
+
+```bash
+pnpm test:e2e:ui
+```
+
+E2E tests are located in the `e2e` directory at the project root.
