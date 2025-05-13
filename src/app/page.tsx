@@ -3,13 +3,13 @@
 import { useState } from 'react'
 import { ArrowDown } from 'lucide-react'
 
-import { PostCard } from '@/components/PostCard/PostCard'
-import ShowcaseSection from '@/components/ShowcaseSection'
-import { useArticles } from '@/lib/useArticles'
 import { ARTICLES_KEY } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { PostCard } from '@/components/PostCard/PostCard'
+import { useArticles } from '@/lib/useArticles'
 import { useFilteredArticles } from '@/lib/useFilteredArticles'
 import { useIsClient } from '@/lib/useIsClient'
-import { Button } from '@/components/ui/button'
+import ShowcaseSection from '@/components/ShowcaseSection'
 
 export default function Home() {
   const { articles } = useArticles(ARTICLES_KEY)

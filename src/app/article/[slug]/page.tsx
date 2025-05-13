@@ -1,12 +1,11 @@
 'use client'
-import { usePathname } from 'next/navigation'
-import { notFound } from 'next/navigation'
+import { notFound, usePathname } from 'next/navigation'
 
-import { useArticles } from '@/lib/useArticles'
-import { ARTICLES_KEY } from '@/lib/utils'
-import { useSwordiumUser } from '@/lib/useSwordiumUser'
 import { Article } from '@/components/article'
+import { ARTICLES_KEY } from '@/lib/utils'
 import { Role } from '@/types/Role'
+import { useArticles } from '@/lib/useArticles'
+import { useSwordiumUser } from '@/lib/useSwordiumUser'
 
 export default function ArticlePage() {
   const { role, isSignedIn } = useSwordiumUser()

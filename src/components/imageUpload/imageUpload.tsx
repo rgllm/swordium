@@ -2,6 +2,7 @@ import { UploadDropzone } from 'react-uploader'
 import { Uploader } from 'uploader'
 
 const uploader = Uploader({ apiKey: 'free' })
+
 const options = {
   maxFileCount: 1,
   mimeTypes: ['image/jpeg', 'image/png', 'image/jpg'],
